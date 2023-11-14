@@ -104,15 +104,15 @@ jobs:
           CIBW_BEFORE_BUILD_LINUX: >
             dnf install -y mesa-libGL libxslt llvm clang-libs
             && python3 -m pip install --user aqtinstall auditwheel
-            && python3 -m aqt install-qt linux desktop ${{ env.QT_VERSION }} --outputdir ${{ env.QT_BASE_DIR }}
+            && python3 -m aqt install-qt linux desktop ${{ env.QT_VERSION }} --outputdir ${{ env.QT_BASE_DIR }} --base http://mirrors.ocf.berkeley.edu/qt/
             && python3 ./scripts/set-qt-constraint.py ${{ matrix.pyside_ver }}
           CIBW_BEFORE_BUILD_MACOS: >
             python3 -m pip install aqtinstall
-            && python3 -m aqt install-qt mac desktop ${{ env.QT_VERSION }} --outputdir ${{ env.QT_BASE_DIR }}
+            && python3 -m aqt install-qt mac desktop ${{ env.QT_VERSION }} --outputdir ${{ env.QT_BASE_DIR }} --base http://mirrors.ocf.berkeley.edu/qt/
             && python3 ./scripts/set-qt-constraint.py ${{ matrix.pyside_ver }}
           CIBW_BEFORE_BUILD_WINDOWS: >
             python3 -m pip install aqtinstall
-            && python3 -m aqt install-qt windows desktop ${{ env.QT_VERSION }} win64_msvc2019_64 --outputdir ${{ env.QT_BASE_DIR }}
+            && python3 -m aqt install-qt windows desktop ${{ env.QT_VERSION }} win64_msvc2019_64 --outputdir ${{ env.QT_BASE_DIR }} --base http://mirrors.ocf.berkeley.edu/qt/
             && python3 ./scripts/set-qt-constraint.py ${{ matrix.pyside_ver }}
           CIBW_MANYLINUX_X86_64_IMAGE: manylinux_2_28
           CIBW_ARCHS_MACOS: x86_64 arm64
