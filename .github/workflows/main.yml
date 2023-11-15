@@ -44,7 +44,7 @@ jobs:
             arch: x86_64
           - os: macos-latest
             pyside_ver: ${{ needs.build_src.outputs.rel0 }}
-            wheel: cp38-macosx_x86_64
+            wheel: cp310-macosx_x86_64
             arch: x86_64
           - os: macos-latest
             pyside_ver: ${{ needs.build_src.outputs.rel0 }}
