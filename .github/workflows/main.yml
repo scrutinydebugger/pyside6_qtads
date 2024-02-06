@@ -7,7 +7,7 @@ jobs:
       rel0: ${{ steps.query.outputs.rel0 }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: recursive
       - name: Query PyPI for recent PySide release number
@@ -21,7 +21,7 @@ jobs:
           python -m pip install --user build
           python -m build --sdist
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: source
           path: dist/*.tar.gz
@@ -82,7 +82,7 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1
         if: runner.os == 'Windows'
       - name: Build wheels
-        uses: pypa/cibuildwheel@v2.16.2
+        uses: pypa/cibuildwheel@v2.16.5
         with:
           output-dir: wheelhouse
         env:
