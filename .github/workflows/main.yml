@@ -135,7 +135,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: wheel-${{ matrix.os }}
+          name: wheel-${{ matrix.wheel }}
           path: ./wheelhouse/*.whl
 
   merge:
