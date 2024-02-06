@@ -135,7 +135,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: wheels
+          name: wheels-${{ matrix.runs-on }}
           path: ./wheelhouse/*.whl
 
   upload_pypi:
