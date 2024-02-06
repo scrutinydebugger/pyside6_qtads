@@ -32,7 +32,7 @@ if __name__ == "__main__":
                 'libQt6Core.so.6',
                 'libxcb.so.1',
             ])
-        fname = tmppath / libc.name + "-policy.json"
+        fname = tmppath / (libc.name + "-policy.json")
         with open(fname, "w") as f:
             json.dump(policies, f)
         POLICY_JSON_MAP[libc] = fname
