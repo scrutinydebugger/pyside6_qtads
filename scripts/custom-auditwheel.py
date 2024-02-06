@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from pathlib import Path
+import pathlib
 import tempfile
 import json
 from auditwheel.main import main
