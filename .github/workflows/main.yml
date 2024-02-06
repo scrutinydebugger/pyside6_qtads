@@ -137,6 +137,7 @@ jobs:
         with:
           name: wheel-${{ matrix.wheel }}
           path: ./wheelhouse/*.whl
+          delete-merged: true
 
   merge:
     runs-on: ubuntu-latest
