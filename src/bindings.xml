@@ -199,6 +199,7 @@
             <enum-type name="eAutoHideFlag" />
             <enum-type name="eViewMenuInsertionOrder" />
             <enum-type name="eConfigFlag" flags="ConfigFlags" />
+            <enum-type name="eAutoHideFlag" flags="AutoHideFlags" />
 
             <modify-function signature="registerFloatingWidget(ads::CFloatingDockContainer*)">
                 <modify-argument index="1">
@@ -239,6 +240,11 @@
                 </modify-argument>
             </modify-function>
             <modify-function signature="addAutoHideDockWidget(ads::SideBarLocation, ads::CDockWidget*)">
+                <modify-argument index="2">
+                    <parent index="this" action="add"/>
+                </modify-argument>
+            </modify-function>
+            <modify-function signature="addAutoHideDockWidgetToContainer(ads::SideBarLocation, ads::CDockWidget*, ads::CDockContainerWidget*)">
                 <modify-argument index="2">
                     <parent index="this" action="add"/>
                 </modify-argument>
