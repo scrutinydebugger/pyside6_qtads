@@ -137,7 +137,6 @@ jobs:
         with:
           name: wheel-${{ matrix.wheel }}
           path: ./wheelhouse/*.whl
-          delete-merged: true
 
   merge:
     runs-on: ubuntu-latest
@@ -148,6 +147,7 @@ jobs:
         with:
           name: wheels
           pattern: wheel-*
+          delete-merged: true
 
   upload_pypi:
     needs: [build_wheels, build_src]
