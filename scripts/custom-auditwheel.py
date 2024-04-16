@@ -13,16 +13,19 @@ if __name__ == "__main__":
         policies = json.loads(POLICY_JSON_MAP[libc].read_text())
         for p in policies:
             p['lib_whitelist'].extend([
+                'libpyside6.abi3.so.6.7',
                 'libpyside6.abi3.so.6.6',
                 'libpyside6.abi3.so.6.5',
                 'libpyside6.abi3.so.6.4',
                 'libpyside6.abi3.so.6.3',
+                'libshiboken6.abi3.so.6.7',
                 'libshiboken6.abi3.so.6.6',
                 'libshiboken6.abi3.so.6.5',
                 'libshiboken6.abi3.so.6.4',
                 'libshiboken6.abi3.so.6.3',
                 'libQt6Widgets.so.6',
                 'libQt6Gui.so.6',
+                'libpyside6qml.abi3.so.6.7',
                 'libpyside6qml.abi3.so.6.6',
                 'libpyside6qml.abi3.so.6.5',
                 'libpyside6qml.abi3.so.6.4',
